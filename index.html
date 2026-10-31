@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deskvy — Make your Windows desktop feel more alive</title>
+<meta name="description" content="Deskvy is a lightweight Windows customization app: a text-only Home widget, a music visualizer above your taskbar, themes and accents, static and live wallpapers, and favorite app tiles that snap into place.">
+<link rel="icon" href="deskvy-logo.png">
+<!-- HOW TO PUBLISH THIS FILE - READ BEFORE UPLOADING
+  1. Upload index.html AND deskvy-logo.png to the ROOT of the Deskvy
+     repo on main, the same way Barivy's index.html sits at its repo
+     root. Then enable GitHub Pages (Settings -> Pages -> Deploy from
+     branch: main, folder: / (root)).
+  2. BEFORE the first publish, confirm the repo URL below. It is
+     written as misavondo86/deskvy to match the Barivy pattern; if the
+     Deskvy repo is named differently, update every github.com link.
+  3. The Download button currently points at the Releases page. Once
+     the v1.0 installer is uploaded, you can point it straight at the
+     file, Barivy-style:
+       https://github.com/misavondo86/deskvy/releases/download/v1.0/DeskvySetup.exe
+  4. No price is written anywhere on this page on purpose — Pro is
+     sold manually by DM, and no price has been decided yet. Add one
+     to the Pro section when you decide it. Do NOT invent a price. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #111111; color: #FFFFFF; font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif; line-height: 1.6; }
+  a { color: #D2A679; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  nav .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 20px; color: #FFFFFF; text-decoration: none; }
+  nav .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  nav .links { display: flex; gap: 24px; }
+  nav .links a { color: #CCCCCC; text-decoration: none; font-size: 15px; }
+  nav .links a:hover { color: #D2A679; }
+  header { text-align: center; padding: 64px 0 48px; }
+  header img.logo { width: 128px; height: 128px; border-radius: 28px; }
+  header h1 { font-size: 44px; line-height: 1.2; margin: 24px 0 12px; }
+  header h1 span { color: #D2A679; }
+  header p.sub { font-size: 18px; color: #CCCCCC; max-width: 640px; margin: 0 auto; }
+  .btn { display: inline-block; background: #D2A679; color: #111111; font-weight: 700; font-size: 17px; padding: 14px 32px; border-radius: 999px; text-decoration: none; margin-top: 28px; }
+  .btn:hover { background: #E2BC8D; }
+  .btn-note { color: #999999; font-size: 13px; margin-top: 12px; }
+  section { padding: 48px 0; }
+  section h2 { font-size: 30px; margin-bottom: 8px; }
+  section p.lead { color: #CCCCCC; margin-bottom: 28px; max-width: 720px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { background: #1E1E1E; border: 1px solid #333333; border-radius: 16px; padding: 24px; }
+  .card h3 { font-size: 18px; margin-bottom: 8px; }
+  .card p { color: #CCCCCC; font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid #333333; }
+  th { color: #D2A679; }
+  td { color: #CCCCCC; }
+  td:first-child, th:first-child { color: #FFFFFF; }
+  .pro { color: #D2A679; font-weight: 600; }
+  .note { background: #1E1E1E; border: 1px solid #D2A679; border-radius: 16px; padding: 24px; }
+  .note h3 { margin-bottom: 8px; }
+  .note p, .note li { color: #CCCCCC; font-size: 15px; }
+  .note ol { padding-left: 20px; }
+  .faq h3 { font-size: 17px; margin: 20px 0 4px; }
+  .faq p { color: #CCCCCC; font-size: 15px; }
+  .cta { text-align: center; padding: 64px 0; }
+  .cta h2 { font-size: 32px; margin-bottom: 8px; }
+  .cta p { color: #CCCCCC; }
+  footer { border-top: 1px solid #333333; padding: 32px 0; text-align: center; color: #999999; font-size: 14px; }
+  footer a { color: #D2A679; text-decoration: none; }
+  code { font-family: "IBM Plex Mono", Consolas, monospace; font-size: 14px; color: #FFFFFF; }
+  @media (max-width: 640px) {
+    header h1 { font-size: 32px; }
+    .grid { grid-template-columns: 1fr; }
+    nav .links { gap: 14px; }
+    table { font-size: 14px; }
+    th, td { padding: 10px 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav id="top">
+    <a class="brand" href="#top"><img src="deskvy-logo.png" alt="Deskvy logo">Deskvy</a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#compare">Free vs Pro</a>
+      <a href="#faq">FAQ</a>
+      <a href="#download">Download</a>
+    </div>
+  </nav>
+
+  <header>
+    <img class="logo" src="deskvy-logo.png" alt="Deskvy logo">
+    <h1>Make your Windows desktop <span>feel more alive.</span></h1>
+    <p class="sub">Deskvy is a lightweight Windows customization app: a text-only Home widget, a music visualizer above your taskbar, themes and accents, wallpapers — static or live — and favorite app tiles that snap into place.</p>
+    <a class="btn" href="https://github.com/misavondo86/deskvy/releases">Download Deskvy for Windows</a>
+    <p class="btn-note">Free version &middot; v1.0 installer, per-user, no admin needed &middot; Windows 10 / 11 &middot; Requires the .NET 10 Desktop Runtime</p>
+  </header>
+
+  <section id="features">
+    <h2>Everything on your desktop, in one tray app</h2>
+    <p class="lead">No Explorer hooks, no injection — Deskvy works through the safe layer of Windows customization, so it stays light and stays out of your way.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Home widget</h3>
+        <p>Clock, date, city, and weather as plain text on your desktop — fully transparent, no card, no border. Drag it anywhere, lock it in place, pick the alignment, and set each line's size, font, and text shadow.</p>
+      </div>
+      <div class="card">
+        <h3>Theme &amp; accent</h3>
+        <p>Light and Dark themes, 8 accent presets, and toggles for accent on Start &amp; taskbar and on title bars. Your accent applies system-wide through Windows itself.</p>
+      </div>
+      <div class="card">
+        <h3>Automatic theme schedule</h3>
+        <p>Dark in the evening, Light in the morning — on by default at 18:00 / 06:00, with custom times in Pro. The schedule flips the theme on its own, even across midnight.</p>
+      </div>
+      <div class="card">
+        <h3>Music visualizer</h3>
+        <p>A wave strip that lives above your taskbar and moves with whatever is playing. It appears when music is audible and hides when a fullscreen app takes over. White, Custom, and Aurora (song artwork) colors; 30 or 60 FPS.</p>
+      </div>
+      <div class="card">
+        <h3>Wallpaper, static or live</h3>
+        <p>Browse a folder, preview, and apply static images in one click — or set a video as a live wallpaper that plays behind your icons and pauses for fullscreen apps. MP4 and WMV supported.</p>
+      </div>
+      <div class="card">
+        <h3>Favorite app tiles</h3>
+        <p>Pin any app as a draggable tile anywhere on the desktop. Rename it, hide its name, toggle its shadow, and drag with Figma-style snap guides that line tiles up by edge and center. Lock everything from the tray.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <h2>Free vs Pro</h2>
+    <p class="lead">Every feature has a free version. Pro removes the limits — one lifetime license key, validated offline on your machine, no subscription, no account.</p>
+    <table>
+      <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
+      <tr><td>Home widget</td><td>Full</td><td class="pro">Full</td></tr>
+      <tr><td>Font sizes</td><td>Full</td><td class="pro">Full</td></tr>
+      <tr><td>Font family</td><td>Segoe UI</td><td class="pro">Any font</td></tr>
+      <tr><td>Home text color</td><td>White, Gold</td><td class="pro">Any custom HEX</td></tr>
+      <tr><td>Theme &amp; accent presets</td><td>Light / Dark, 8 presets, placement toggles</td><td class="pro">Same, plus custom HEX accent</td></tr>
+      <tr><td>Automatic theme schedule</td><td>On / off, default 18:00 / 06:00</td><td class="pro">Custom times</td></tr>
+      <tr><td>Music visualizer</td><td>Wave, White, 30 FPS</td><td class="pro">60 FPS, Custom + Aurora colors</td></tr>
+      <tr><td>Wallpaper</td><td>Static images</td><td class="pro">Static + live video</td></tr>
+      <tr><td>Favorite tiles</td><td>Max 5 (rename, show name, shadow, snap guides included)</td><td class="pro">Unlimited</td></tr>
+      <tr><td>Start with Windows</td><td>Full</td><td class="pro">Full</td></tr>
+    </table>
+    <p style="color:#999999; font-size:14px; margin-top:16px;">Pro is sold manually — contact us on Telegram <a href="https://t.me/mvdoooo">@mvdoooo</a> or Instagram <a href="https://instagram.com/misavondo_">@misavondo_</a>, and you will receive a lifetime key for your email. The key works offline and survives reinstalls: just paste the same key again.</p>
+  </section>
+
+  <section id="smartscreen">
+    <div class="note">
+      <h3>The Windows warning is expected</h3>
+      <p>Deskvy's installer is not code-signed yet, so Windows SmartScreen will warn you on the first install. That is normal for a small independent app. To install anyway:</p>
+      <ol>
+        <li>On the blue SmartScreen window, click <strong>More info</strong>.</li>
+        <li>Click <strong>Run anyway</strong>.</li>
+      </ol>
+      <p style="margin-top:12px;">Deskvy never asks for admin rights — it installs per-user, and its settings live in <code>%LocalAppData%\Deskvy</code>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Privacy, plainly</h2>
+    <p class="lead">Deskvy checks the weather online (Open-Meteo forecasts). Everything else — your widgets, favorites, wallpaper, and license — lives only on your machine. Your license key is validated offline and is never sent anywhere. There is no account, no tracking, and no ads.</p>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>FAQ</h2>
+    <h3>Does Deskvy work on Windows 10 and 11?</h3>
+    <p>Yes, both. You need the .NET 10 Desktop Runtime (free from Microsoft) — the installer page links to it if you don't have it yet.</p>
+    <h3>Does the live wallpaper cover my icons?</h3>
+    <p>No. The video plays behind your desktop icons, and it pauses automatically when a true fullscreen app opens, resuming when you leave it.</p>
+    <h3>Is Pro a subscription?</h3>
+    <p>No. One lifetime key, no expiry, no hardware binding, no renewal. If you reinstall Windows or move to a new laptop, paste the same key again — you don't need a new one.</p>
+    <h3>Will Deskvy slow down my PC?</h3>
+    <p>Deskvy is built to stay light: no Explorer hooks, no injection, and the visualizer only renders while music is actually playing.</p>
+    <h3>What if I lose my Pro key?</h3>
+    <p>Contact us on Telegram <a href="https://t.me/mvdoooo">@mvdoooo</a> or Instagram <a href="https://instagram.com/misavondo_">@misavondo_</a> with the email you bought with, and we will help you recover it.</p>
+  </section>
+
+  <div class="cta" id="download">
+    <h2>Put Deskvy on your desktop</h2>
+    <p>Free to try, Pro when you want the limits gone.</p>
+    <a class="btn" href="https://github.com/misavondo86/deskvy/releases">Download Deskvy for Windows</a>
+    <p class="btn-note">v1.0 &middot; Windows 10 / 11 &middot; .NET 10 Desktop Runtime required</p>
+  </div>
+
+  <footer>
+    <p>Deskvy by <a href="https://github.com/misavondo86">misavondo86</a> &middot; <a href="https://t.me/mvdoooo">Telegram @mvdoooo</a> &middot; <a href="https://instagram.com/misavondo_">Instagram @misavondo_</a></p>
+    <p style="margin-top:8px;">Make your Windows desktop feel more alive.</p>
+  </footer>
+</div>
+</body>
+</html>
