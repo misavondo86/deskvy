@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deskvy Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111111; color: #FFFFFF; font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif; line-height: 1.7; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 20px 64px; }
+  a { color: #D2A679; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .back { font-size: 14px; }
+  h1 { font-size: 38px; font-weight: 800; margin: 32px 0 8px; }
+  .updated { color: #999999; font-size: 14px; margin-bottom: 32px; }
+  h2 { font-size: 22px; margin: 32px 0 10px; }
+  p, li { color: #DDDDDD; margin-bottom: 12px; }
+  ul { padding-left: 22px; }
+  .card { background: #1E1E1E; border: 1px solid #333333; border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .card p:last-child { margin-bottom: 0; }
+  footer { border-top: 1px solid #333333; padding: 32px 0; text-align: center; color: #999999; font-size: 14px; margin-top: 48px; }
+  footer a { color: #D2A679; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="back"><a href="index.html">&larr; Back to Deskvy</a></p>
+  <h1>Deskvy Privacy Policy</h1>
+  <p class="updated">Last updated: 1 November 2026</p>
+
+  <p>Deskvy is a Windows desktop customization app made by an independent developer. There is no Deskvy account, no sign-in, and no Deskvy server. This policy describes exactly what the app sends, what it keeps on your machine, and what it never does.</p>
+
+  <h2>Weather: the one thing that goes online</h2>
+  <p>To show the weather on the Home widget, Deskvy refreshes roughly every 15 minutes:</p>
+  <ul>
+    <li>It asks <a href="https://ip-api.com/">ip-api.com</a> for an approximate location derived from your IP address (city and coordinates). Any request to that service necessarily reveals your IP address to it — that is how IP-based location works.</li>
+    <li>It then asks <a href="https://open-meteo.com/">Open-Meteo</a> for the current weather at those coordinates. No API key is used.</li>
+  </ul>
+  <p>The location is used only to fetch the weather and display your city on the widget. It is not saved to Deskvy's settings file and is not sent to anyone else. If you never look at the weather, nothing else in Deskvy goes online at all.</p>
+
+  <h2>What never leaves your machine</h2>
+  <ul>
+    <li><strong>No identity:</strong> Deskvy never sends your name, email address, account details, or device identifiers anywhere. It has no analytics, no advertising, and no tracking.</li>
+    <li><strong>License keys stay offline:</strong> a Pro license key is validated on your own machine and is never transmitted to any server.</li>
+    <li><strong>Your audio stays local:</strong> the music visualizer reads system audio on your machine only, to draw the wave. Audio is never recorded, stored, or transmitted.</li>
+    <li><strong>Your files stay local:</strong> your wallpaper images and videos, favorite apps, and widget settings are read from your machine and never uploaded.</li>
+  </ul>
+
+  <h2>What is stored on your machine</h2>
+  <p>Deskvy stores its settings, favorite app tiles, and license key locally in <span style="font-family:'IBM Plex Mono',monospace;">%LocalAppData%\Deskvy</span>. That folder is separate from the install folder, so uninstalling Deskvy does not delete it — reinstalling keeps your setup. To remove it completely, delete that folder manually after uninstalling.</p>
+
+  <div class="card">
+    <p><strong>In short:</strong> the only data Deskvy ever sends out is an approximate location for weather (to ip-api.com and Open-Meteo). Everything else — widgets, favorites, wallpaper, license, audio — lives only on your PC.</p>
+  </div>
+
+  <h2>Third-party services</h2>
+  <p>ip-api.com and Open-Meteo have their own privacy policies, which govern what they do with the requests described above. Deskvy has no control over their practices and receives no data back from them beyond the location and weather itself.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated date at the top of this page will change with it. Continued use of Deskvy after a change means you accept the updated policy.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy? Reach the developer on Telegram <a href="https://t.me/mvdoooo">@mvdoooo</a> or Instagram <a href="https://instagram.com/misavondo_">@misavondo_</a>, or through the Deskvy website at <a href="index.html">misavondo86.github.io/deskvy</a>.</p>
+
+  <footer>
+    <p>Deskvy by <a href="https://github.com/misavondo86">misavondo86</a> &middot; <a href="index.html">Home</a></p>
+  </footer>
+</div>
+</body>
+</html>
