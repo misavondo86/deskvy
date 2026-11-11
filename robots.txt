@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://misavondo86.github.io/deskvy/sitemap.xml
